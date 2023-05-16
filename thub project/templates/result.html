@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Translation Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .result-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .result-container p {
+            margin-bottom: 10px;
+        }
+        .go-back {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="result-container">
+            <h1>Translation Result</h1>
+            <p>Detected Language: {{ lang }}</p>
+            <p>Original Text: {{ text }}</p>
+            <p>Translated Text: {{ translated_text }}</p>
+        </div>
+        <div class="go-back">
+            <a href="/" class="btn btn-primary">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>
