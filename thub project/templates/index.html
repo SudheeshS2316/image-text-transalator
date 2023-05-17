@@ -1,52 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Image Text Translation</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            padding: 20px;
-        }
-        h1 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .form-container {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        .form-container label {
-            font-weight: bold;
-        }
-        .form-container select {
-            margin-bottom: 20px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Translator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 <body>
+    <h1>IMAGE TEXT LANGUAGE TRANSLATOR</h1>
     <div class="container">
-        <div class="form-container">
-            <h1>Image Text Translation</h1>
-            <form action="/" method="POST" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="image">Upload Image:</label>
-                    <input type="file" id="image" name="image" accept="image/*" class="form-control-file" required>
-                </div>
-                <div class="form-group">
-                    <label for="target_language">Translate to:</label>
-                    <select id="target_language" name="target_language" class="form-control" required>
-                        <option value="">--Select Language--</option>
-                        <option value="en">English</option>
-                        <option value="es">Spanish</option>
-                        <option value="fr">French</option>
-                        <option value="de">German</option>
-                        <option value="ja">Japanese</option>
-                        <option value="ko">Korean</option>
-                        <option value="zh">Chinese</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Translate</button>
-            </form>
+        <form id="translation-form" action="/" method="POST" enctype="multipart/form-data">
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name = "image" accept="image/*" required>
+            <button type="submit">Translate</button>
+        </form>
+        <div>
+            <label for="targetlanguage" style>Translate to:</label>
+            <select id="targetlanguage" name="targetlanguage" class="form-control" required>
+                <option value="">--Select Language--</option>
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+                <option value="zh">Chinese</option>
+            </select>
         </div>
     </div>
 </body>
