@@ -7,7 +7,7 @@ import openai
 app = Flask(__name__)
 
 # Set up OpenAI API credentials
-openai.api_key = 'API KEY'
+openai.api_key = 'api key'
 
 # Define the translation function
 def translate_text(text, target_language):
@@ -39,7 +39,7 @@ def index():
         lang = detect(text)
 
         # Get the target language from the form
-        target_language = request.form['target_language']
+        target_language = request.form.get('targetlanguage')
 
         # Translate the text
         translated_text = translate_text(text, target_language)
